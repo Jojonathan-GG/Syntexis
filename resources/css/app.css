@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --sx-bg: #f6f7fb;
+    --sx-surface: #ffffff;
+    --sx-border: #e5e7ef;
+    --sx-text: #111827;
+    --sx-muted: #6b7280;
+    --sx-brand: #4f46e5;
+}
+
+.dark {
+    --sx-bg: #0b0f1a;
+    --sx-surface: #111827;
+    --sx-border: #1f2937;
+    --sx-text: #e5e7eb;
+    --sx-muted: #9ca3af;
+    --sx-brand: #818cf8;
+}
+
+html {
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+    background: var(--sx-bg);
+    color: var(--sx-text);
+}
+
+@layer components {
+    .sx-card {
+        @apply rounded-xl border bg-white shadow-sm dark:bg-slate-900;
+        border-color: var(--sx-border);
+    }
+
+    .sx-card-pad {
+        @apply sx-card p-5;
+    }
+
+    .sx-label {
+        @apply mb-1.5 block text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400;
+    }
+
+    .sx-input {
+        @apply w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100;
+    }
+
+    .sx-btn {
+        @apply inline-flex items-center justify-center gap-2 rounded-lg px-3.5 py-2 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-indigo-500/30 disabled:opacity-50;
+    }
+
+    .sx-btn-primary {
+        @apply sx-btn bg-indigo-600 text-white hover:bg-indigo-700;
+    }
+
+    .sx-btn-secondary {
+        @apply sx-btn border border-slate-300 bg-white text-slate-700 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800;
+    }
+
+    .sx-btn-danger {
+        @apply sx-btn bg-rose-600 text-white hover:bg-rose-700;
+    }
+
+    .sx-table {
+        @apply w-full text-left text-sm;
+    }
+
+    .sx-th {
+        @apply border-b border-slate-200 px-4 py-3 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:border-slate-800 dark:text-slate-400;
+    }
+
+    .sx-td {
+        @apply border-b border-slate-100 px-4 py-3.5 align-middle dark:border-slate-800/70;
+    }
+
+    .sx-row-hover {
+        @apply transition hover:bg-slate-50 dark:hover:bg-slate-800/40;
+    }
+
+    .sx-link {
+        @apply font-medium text-indigo-600 hover:text-indigo-700 dark:text-indigo-400;
+    }
+
+    .sx-num {
+        font-family: 'JetBrains Mono', ui-monospace, monospace;
+        font-variant-numeric: tabular-nums;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #334155;
+}
